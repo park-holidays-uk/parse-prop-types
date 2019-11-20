@@ -1,14 +1,14 @@
 {
-  "name": "parse-prop-types",
+  "name": "@park-holidays-uk/parse-prop-types",
   "version": "0.3.0",
   "description": "Parses React prop-types into a readable object",
   "license": "MIT",
-  "repository": "diegohaz/parse-prop-types",
+  "repository": "park-holidays-uk/parse-prop-types",
   "main": "dist/index.js",
   "author": {
-    "name": "Diego Haz",
-    "email": "hazdiego@gmail.com",
-    "url": "https://github.com/diegohaz"
+    "name": "Park Holidays UK",
+    "email": "aindge@parkholidays.com",
+    "url": "https://github.com/park-holidays-uk"
   },
   "engines": {
     "node": ">=6"
@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "test": "jest",
     "coverage": "npm test -- --coverage",
