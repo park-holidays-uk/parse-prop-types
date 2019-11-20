@@ -68,4 +68,4 @@ const parsePropTypes = propTypes => Object.keys(propTypes).reduce((parsed, prop)
   [prop]: parsePropTypeMethod(propTypes[prop])
 }), {});
 
-module.exports(parsePropTypes);
+export { parsePropTypes };
