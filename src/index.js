@@ -64,20 +64,8 @@ const parsePropTypeMethod = (
   ...method
 });
 
-/** */
-const parsePropTypes = ({
-  propTypes = {},
-  defaultProps = {}
-}: {
-  propTypes?: Object,
-  defaultProps?: Object
-}): Object =>
-  Object.keys(propTypes).reduce(
-    (parsed, prop) => ({
-      ...parsed,
-      [prop]: parsePropTypeMethod(propTypes[prop], defaultProps[prop])
-    }),
-    {}
-  );
+const parsePropTypes = propTypes => Object.keys(propTypes).reduce((parsed, prop) => _extends({}, parsed, {
+  [prop]: parsePropTypeMethod(propTypes[prop])
+}), {});
 
-export default parsePropTypes;
+export { parsePropTypes };
