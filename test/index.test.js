@@ -20,22 +20,11 @@ const propTypes = {
 
 describe("parsePropTypes", () => {
   it("works", () => {
-    const Component = {
-      propTypes,
-      defaultProps: {
-        bar: false
-      }
-    };
-    expect(parsePropTypes(Component)).toMatchSnapshot();
+    expect(parsePropTypes(propTypes)).toMatchSnapshot();
   });
 
-  it("works without defaultProps", () => {
-    const Component = { propTypes };
-    expect(parsePropTypes(Component)).toMatchSnapshot();
-  });
-
-  it("works without propTypes", () => {
-    const Component = {};
-    expect(parsePropTypes(Component)).toEqual({});
+  it("works with empty object", () => {
+    const emptyPropTypes = {};
+    expect(parsePropTypes(emptyPropTypes)).toEqual({});
   });
 });
