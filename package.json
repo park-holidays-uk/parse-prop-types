@@ -1,6 +1,6 @@
 {
   "name": "@park-holidays-uk/parse-prop-types",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Parses React prop-types into a readable object",
   "license": "MIT",
   "repository": "park-holidays-uk/parse-prop-types",

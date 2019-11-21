@@ -3,9 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.parsePropTypes = undefined;
 
-var _extends2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 /* eslint-disable no-param-reassign, no-use-before-define */
 
 
@@ -20,7 +19,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 const mutatePropType = (name, object = _propTypes2.default[name]) => {
-  object.type = _extends2({}, object.type, { name });
+  object.type = _extends({}, object.type, { name });
   if (object.isRequired) {
     object.isRequired.required = true;
     Object.keys(object).filter(key => !["isRequired"].includes(key)).forEach(key => {
@@ -68,7 +67,7 @@ const parsePropTypeMethod = (_ref, value) => {
   let isRequired = _ref.isRequired,
       method = _objectWithoutProperties(_ref, ["isRequired"]);
 
-  return _extends2({
+  return _extends({
     type: {
       name: "custom"
     },
@@ -76,8 +75,9 @@ const parsePropTypeMethod = (_ref, value) => {
   }, typeof value !== "undefined" ? { defaultValue: { value } } : {}, method);
 };
 
+/** */
 const parsePropTypes = propTypes => Object.keys(propTypes).reduce((parsed, prop) => _extends({}, parsed, {
   [prop]: parsePropTypeMethod(propTypes[prop])
 }), {});
 
-exports.parsePropTypes = parsePropTypes;
+exports.default = parsePropTypes;
