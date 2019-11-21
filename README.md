@@ -61,10 +61,8 @@ The returned object is compatible with [`react-docgen`](https://github.com/react
 
 **IMPORTANT:** To avoid issues reading any component's propTypes, it is recommendable importing this package before defining your components' propTypes or before import any third-party component. Import this package in your entry point file could be a great option.
 
-```
-// index.js (entry point file)
-import "parse-prop-types";
-```
+    // index.js (entry point file)
+    import "parse-prop-types";
 
 ## Why not [`react-docgen`](https://github.com/reactjs/react-docgen)?
 
